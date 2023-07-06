@@ -197,6 +197,10 @@ html.light-mode body {
     background: #333333;
     color: #FFFFFF;
   }
+  iframe[data-theme="system"] {
+    background: #333333;
+    color: #FFFFFF;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -209,6 +213,10 @@ html.light-mode body {
     color: #333333;
   }
   .capsule[data-theme="system"] {
+    background: #FFFFFF;
+    color: #333333;
+  }
+  iframe[data-theme="system"] {
     background: #FFFFFF;
     color: #333333;
   }
@@ -226,6 +234,10 @@ body[data-theme="light"] {
   background: #f6f8fa;
   color: #24292e;
 }
+iframe[data-theme="light"] {
+  background: #f6f8fa;
+  color: #24292e;
+}
 
 html[data-theme="dark"] {
   background: #161b22;
@@ -236,6 +248,10 @@ body[data-theme="dark"] {
   color: #c9d1d9;
 }
 .capsule[data-theme="dark"] {
+  background: #161b22;
+  color: #c9d1d9;
+}
+iframe[data-theme="dark"] {
   background: #161b22;
   color: #c9d1d9;
 }
