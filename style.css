@@ -277,7 +277,7 @@ iframe {
   color: #24292e;
 }
 
-.dark-mode iframe {
+iframe {
   background: #161b22;
   color: #c9d1d9;
 }
