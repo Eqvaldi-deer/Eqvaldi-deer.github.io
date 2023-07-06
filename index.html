@@ -15,35 +15,42 @@
     <script>
         const readTxt = async () => {
             let url = "Changelog.txt";
-            let urlNews = "NEWS.txt";
             let response = await fetch(url);
-            let responseNews = await fetch(urlNews);
             const txt = await response.text().then((str) => {
-                return str.split('\r');
-            });
-            const txtNews = await responseNews.text().then((str) => {
                 return str.split('\r');
             });
 
             let result = txt.join('<br/>');
-            let resultNews = txtNews.join('<br/>');
 
             let iframe = document.createElement('iframe');
-            let iframeNews = document.createElement('iframe');
             iframe.srcdoc = `<pre>${result}</pre>`;
             iframe.style.width = '100%';
             iframe.style.height = '400px';
-            iframeNews.srcdoc = `<pre>${result}</pre>`;
-            iframeNews.style.width = '100%';
-            iframeNews.style.height = '400px';
 
             let ele = document.getElementById('textData');
-            let eleNews = document.getElementById('newsData');
             ele.appendChild(iframe);
-            eleNews.appendChild(iframeNews);
+        }
+
+        const readTxtNews = async () => {
+            let url = "NEWS.txt";
+            let response = await fetch(url);
+            const txt = await response.text().then((str) => {
+                return str.split('\r');
+            });
+
+            let result = txt.join('<br/>');
+
+            let iframe = document.createElement('iframe');
+            iframe.srcdoc = `<pre>${result}</pre>`;
+            iframe.style.width = '100%';
+            iframe.style.height = '400px';
+
+            let ele = document.getElementById('newsData');
+            ele.appendChild(iframe);
         }
 
         readTxt();
+        readTxtNews();
     </script>
 </head>
 <div class="capsule">
