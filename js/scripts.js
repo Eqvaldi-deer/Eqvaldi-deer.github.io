@@ -109,5 +109,3 @@ function applyIframeTextColor(mode) {
     iframeBody.style.color = '#c9d1d9'; // Dark mode text color
   }
 }
-
-  applyIframeTextColor(mode);
