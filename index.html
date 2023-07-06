@@ -12,46 +12,6 @@
     <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
     <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
     <link rel="icon" type="image/png" href="logo.jpg" />
-    <script>
-        const readTxt = async () => {
-            let url = "Changelog.txt";
-            let response = await fetch(url);
-            const txt = await response.text().then((str) => {
-                return str.split('\r');
-            });
-
-            let result = txt.join('<br/>');
-
-            let iframe = document.createElement('iframe');
-            iframe.srcdoc = `<pre>${result}</pre>`;
-            iframe.style.width = '100%';
-            iframe.style.height = '400px';
-
-            let ele = document.getElementById('textData');
-            ele.appendChild(iframe);
-        }
-
-        const readTxtNews = async () => {
-            let url = "NEWS.txt";
-            let response = await fetch(url);
-            const txt = await response.text().then((str) => {
-                return str.split('\r');
-            });
-
-            let result = txt.join('<br/>');
-
-            let iframe = document.createElement('iframe');
-            iframe.srcdoc = `<pre>${result}</pre>`;
-            iframe.style.width = '100%';
-            iframe.style.height = '400px';
-
-            let ele = document.getElementById('newsData');
-            ele.appendChild(iframe);
-        }
-
-        readTxt();
-        readTxtNews();
-    </script>
 </head>
 <div class="capsule">
 
@@ -81,6 +41,15 @@
         <p>Stable: <a href="https://github.com/Eqvaldi-deer/releases/releases">Download</a></p>
         <p>Edge: <a href="https://github.com/Eqvaldi-deer/releases/releases">Download</a></p>
         <p>Rolling: <a href="https://github.com/Eqvaldi-deer/build/releases">Download</a></p>
+
+        <h2>Linux src</h2>
+        <a href="https://github.com/Eqvaldi-deer/build">Source code</a>
+
+        <h2>Build it yourself</h2>
+        <a href="https://github.com/Eqvaldi-deer/Debian-build-server-V2">GitHub repository</a>
+
+        <h2>Debian Linux Install Scripts</h2>
+        <a href="https://github.com/Eqvaldi-deer/install-scripts">GitHub repository</a>
 
         <footer class="copy">&copy; Thomas Mozdren and Eqvaldi-deer Copyright 2023</footer>
     </body>
