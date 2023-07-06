@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tomas Mozdren">
-    <meta name="keywords"
-        content="tech, programming, dev, developer, Debian, Shell scripting">
+    <meta name="keywords" content="tech, programming, dev, developer, Debian, Shell scripting">
     <title>Welcome to Eqvaldi-deer</title>
     <link href="style.css" rel="stylesheet" />
     <script src="js/scripts.js"></script>
@@ -15,25 +14,25 @@
     <link rel="icon" type="image/png" href="logo.jpg" />
     <script>
         const readTxt = async () => {
-        let url = "Changelog.txt";
-        let response = await fetch(url);
-        const txt = await response.text().then((str) => {
-          return str.split('\r');    // return the string after splitting it.
-        });
-      
-        let result = txt;
-      
-        let ele = document.getElementById('textData');
-        for (i = 1; i <= result.length - 1; i++) {
-          let paragraph = document.createElement('p');
-          paragraph.innerText = result[i];
-          ele.appendChild(paragraph);
+            let url = "Changelog.txt";
+            let response = await fetch(url);
+            const txt = await response.text().then((str) => {
+                return str.split('\r');    // return the string after splitting it.
+            });
+
+            let result = txt.join('<br/>');  // Join the lines with line breaks
+
+            let iframe = document.createElement('iframe');
+            iframe.srcdoc = `<pre>${result}</pre>`;  // Embed the text content within a <pre> tag
+            iframe.style.width = '100%';
+            iframe.style.height = '400px';
+
+            let ele = document.getElementById('textData');
+            ele.appendChild(iframe);
         }
-      }
-      
-      readTxt();
-      
-      </script>
+
+        readTxt();
+    </script>
 </head>
 <div class="capsule">
 
