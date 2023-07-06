@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
     iframe.setAttribute('data-theme', userTheme);
     if (userTheme === 'light') {
       toggleSwitch.checked = true;
+      applyIframeTextColor('light-mode');
+    } else {
+      toggleSwitch.checked = false;
+      applyIframeTextColor('dark-mode');
     }
   } else {
     // Set the theme based on the OS preference
@@ -48,7 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
     capsule.setAttribute('data-theme', osTheme);
     iframe.setAttribute('data-theme', osTheme);
     localStorage.setItem('theme', osTheme);
-    toggleSwitch.checked = osTheme === 'light';
+    if (toggleSwitch.checked = osTheme === 'light') {
+      applyIframeTextColor('light-mode');
+    } else {
+      applyIframeTextColor('dark-mode');
+    }
   }
 });
 
@@ -90,3 +98,16 @@ const readTxtNews = async () => {
 
 readTxt();
 readTxtNews();
+
+function applyIframeTextColor(mode) {
+  const iframe = document.querySelector(`.${mode} iframe`);
+  const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+  const iframeBody = iframeDocument.querySelector('body');
+  if (mode === 'light-mode') {
+    iframeBody.style.color = '#24292e'; // Light mode text color
+  } else {
+    iframeBody.style.color = '#c9d1d9'; // Dark mode text color
+  }
+}
+
+  applyIframeTextColor(mode);
