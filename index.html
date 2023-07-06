@@ -10,6 +10,8 @@
     <title>Welcome to Eqvaldi-deer</title>
     <link href="style.css" rel="stylesheet" />
     <script src="js/scripts.js"></script>
+    <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+    <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
     <link rel="icon" type="image/png" href="logo.jpg" />
 </head>
 <div class="capsule">
@@ -30,6 +32,9 @@
         <h2>Welcome</h2>
         <p>A website that works on a potato. No really.</p>
 
+        <h2>Changelog</h2>
+        <div id='textData'></div>
+
         <h2>Linux OS Downloads</h2>
         <p>Stable: <a href="https://github.com/Eqvaldi-deer/releases/releases">Download</a></p>
         <p>Edge: <a href="https://github.com/Eqvaldi-deer/releases/releases">Download</a></p>
@@ -40,3 +45,24 @@
 </div>
 
 </html>
+<script>
+  const readTxt = async () => {
+  let url = "Changelog.txt";
+  let response = await fetch(url);
+  const txt = await response.text().then((str) => {
+    return str.split('\r');    // return the string after splitting it.
+  });
+
+  let result = txt;
+
+  let ele = document.getElementById('textData');
+  for (i = 1; i <= result.length - 1; i++) {
+    let paragraph = document.createElement('p');
+    paragraph.innerText = result[i];
+    ele.appendChild(paragraph);
+  }
+}
+
+readTxt();
+
+</script>

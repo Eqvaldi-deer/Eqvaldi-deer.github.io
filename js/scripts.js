@@ -45,20 +45,3 @@ function switchTheme() {
       toggleSwitch.checked = osTheme === 'light';
     }
   });
-
-function message() {
-    console.log('Message me:');
-    console.log('https://m.me/tomas.mozdren.1');
-    console.log('https://t.me/beangreen247');
-    console.log('https://twitter.com/beangreen247');
-    console.log('https://www.instagram.com/beangreen247/');
-    console.log('https://steamcommunity.com/id/BeanGreen247/');
-    console.log('For more links visit https://linktr.ee/BeanGreen247');
-    console.log('luv u...');
-}
-
-function rekt() {
-    console.log('REKTARDIN');
-    console.log('an absolute gigachad');
-    console.log('luv him...');
-}
