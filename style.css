@@ -184,6 +184,11 @@ html.light-mode body {
   color: #24292e;
 }
 
+iframe {
+  background: #FFF;
+  color: #000;
+}
+
 @media (prefers-color-scheme: dark) {
   html[data-theme="system"] {
     background: #333333;
@@ -196,6 +201,10 @@ html.light-mode body {
   .capsule[data-theme="system"] {
     background: #333333;
     color: #FFFFFF;
+  }
+  iframe[data-theme="system"] {
+    background: #FFF;
+    color: #000;
   }
 }
 
@@ -212,6 +221,10 @@ html.light-mode body {
     background: #FFFFFF;
     color: #333333;
   }
+  iframe[data-theme="system"] {
+    background: #FFF;
+    color: #000;
+  }
 }
 
 html[data-theme="light"] {
@@ -226,6 +239,10 @@ body[data-theme="light"] {
   background: #f6f8fa;
   color: #24292e;
 }
+iframe[data-theme="light"] {
+  background: #FFF;
+  color: #000;
+}
 
 html[data-theme="dark"] {
   background: #161b22;
@@ -238,6 +255,10 @@ body[data-theme="dark"] {
 .capsule[data-theme="dark"] {
   background: #161b22;
   color: #c9d1d9;
+}
+iframe[data-theme="dark"] {
+  background: #FFF;
+  color: #000;
 }
 
 html[data-theme="light"] .toggle-input:checked + .toggle-label:after {
