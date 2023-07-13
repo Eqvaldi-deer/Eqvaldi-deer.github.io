@@ -82,5 +82,5 @@ function switchTheme() {
     }
   });
 
-//readTxt();
-//readTxtNews();
+readTxt();
+readTxtNews();
