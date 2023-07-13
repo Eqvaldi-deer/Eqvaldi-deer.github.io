@@ -40,20 +40,17 @@ function switchTheme() {
     const html = document.querySelector('html');
     const body = document.querySelector('body');
     const capsule = document.querySelector('.capsule');
-    const iframe = document.querySelector('iframe');
   
     if (toggleSwitch.checked) {
       html.setAttribute('data-theme', 'light');
       body.setAttribute('data-theme', 'light');
       capsule.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
-      iframe.style.backgroundColor = white;
     } else {
       html.setAttribute('data-theme', 'dark');
       body.setAttribute('data-theme', 'dark');
       capsule.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
-      iframe.style.backgroundColor = white;
     }
   }
   
@@ -62,7 +59,6 @@ function switchTheme() {
     const html = document.querySelector('html');
     const body = document.querySelector('body');
     const capsule = document.querySelector('.capsule');
-    const iframe = document.querySelector('iframe');
   
     toggleSwitch.addEventListener('change', switchTheme);
   
@@ -72,7 +68,6 @@ function switchTheme() {
       html.setAttribute('data-theme', userTheme);
       body.setAttribute('data-theme', userTheme);
       capsule.setAttribute('data-theme', userTheme);
-      iframe.style.backgroundColor = white;
       if (userTheme === 'light') {
         toggleSwitch.checked = true;
       }
@@ -82,7 +77,6 @@ function switchTheme() {
       html.setAttribute('data-theme', osTheme);
       body.setAttribute('data-theme', osTheme);
       capsule.setAttribute('data-theme', osTheme);
-      iframe.style.backgroundColor = white;
       localStorage.setItem('theme', osTheme);
       toggleSwitch.checked = osTheme === 'light';
     }
